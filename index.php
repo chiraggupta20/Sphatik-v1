@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <!-- I'm Samkit Jain -->
+        
         <?php include 'includes/header.php'; ?>
 
         <!-- Hero Section -->
