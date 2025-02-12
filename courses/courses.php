@@ -26,7 +26,7 @@
                     <img src="../includes/images/dbms.jpg" alt="Course 2">
                     <h3>Database management system</h3>
                     <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
+                    <a href="mit.php" class="btn">Enroll Now</a>
                 </div>
                 <div class="course-card">
                     <img src="../includes/images/mit.png" alt="Course 3">
