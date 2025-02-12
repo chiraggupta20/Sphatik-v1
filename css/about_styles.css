@@ -1,0 +1,90 @@
+About US css
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header {
+    background: linear-gradient(135deg, #6d28d9, #4b0082);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #6d28d9;
+}
+
+.mission {
+    text-align: center;
+    padding: 20px;
+    background: #ece8fc;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.team {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    text-align: center;
+    margin: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonials {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.testimonial {
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    text-align: center;
+    padding: 20px;
+    background: #6d28d9;
+    color: white;
+    border-radius: 8px;
+}
+
+.contact-info a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+}
