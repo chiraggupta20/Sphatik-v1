@@ -92,7 +92,7 @@ $activeTab = isset($_GET['tab']) ? $_GET['tab'] : 'ongoing';
             // Add Project Button for Completed Projects
             if ($activeTab === 'completed') {
                 //echo "<button href=faq.php class='add-project-btn'>Add a Completed Project</button>";
-                echo "<a href='faq.php' class='add-project-btn'>Add a Completed Project</a>";
+                echo "<a href='addprojectbutton.php' class='add-project-btn'>Add a Completed Project</a>";
 
             }
 
