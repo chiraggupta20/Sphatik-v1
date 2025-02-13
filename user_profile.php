@@ -1,12 +1,6 @@
 <?php
 // Dummy user data (Replace with actual database data)
-$user = [
-    "name" => "John Doe",
-    "email" => "johndoe@example.com",
-    "phone" => "+1 234 567 890",
-    "address" => "1234 Elm Street, Springfield, USA",
-    "joined" => "January 2021"
-];
+
 
 // Dummy order history
 $orders = [
