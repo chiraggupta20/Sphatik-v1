@@ -1,18 +1,34 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $projectName = $_POST['project_name'];
-    $completionDate = $_POST['completion_date'];
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "sphatik_db";
 
-    // Example: Save project to a database (Modify as per your database connection)
-    // For now, just simulating adding to an array
-    $completedProjects = [
-        ["name" => "E-commerce Platform", "date" => "2024-12-20"],
-        ["name" => "Portfolio Website", "date" => "2024-11-15"]
-    ];
+$conn = new mysqli($servername, $username, $password, $database);
 
-    $newProject = ["name" => $projectName, "date" => $completionDate];
-    array_push($completedProjects, $newProject);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $project_name = $_POST['project_name'];
+    $completion_date = $_POST['completion_date'];
+    $description = $_POST['description'];
+
+    $sql = "INSERT INTO completed_projects (project_name, completion_date, description) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $project_name, $completion_date, $description);
+
+    if ($stmt->execute()) {
+        echo "<p class='success-message'>Project added successfully!</p>";
+    } else {
+        echo "<p class='error-message'>Error: " . $stmt->error . "</p>";
+    }
+
+    $stmt->close();
+}
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -20,81 +36,63 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Completed Project</title>
+    <title>Add a Completed Project</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #f4f4f4;
         }
         .form-container {
             width: 50%;
-            margin: 50px auto;
+            margin: auto;
             padding: 20px;
-            background: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
         }
-        input[type="text"], input[type="date"] {
+        input, textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .submit-btn {
-            width: 100%;
-            padding: 10px;
+        button {
             background-color: #007bff;
             color: white;
+            padding: 12px;
             border: none;
             border-radius: 5px;
-            font-size: 16px;
             cursor: pointer;
         }
-        .submit-btn:hover {
+        button:hover {
             background-color: #0056b3;
         }
-        table {
-            width: 60%;
-            margin: 20px auto;
-            border-collapse: collapse;
+        .success-message {
+            color: green;
+            font-weight: bold;
         }
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
+        .error-message {
+            color: red;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="form-container">
         <h2>Add a Completed Project</h2>
-        <form method="post" action="">
-            <label for="project_name">Project Name:</label>
-            <input type="text" id="project_name" name="project_name" required>
-            
-            <label for="completion_date">Completion Date:</label>
-            <input type="date" id="completion_date" name="completion_date" required>
-            
-            <button type="submit" class="submit-btn">Submit Project</button>
+        <form method="POST" action="">
+            <label>Project Name:</label>
+            <input type="text" name="project_name" required>
+
+            <label>Completion Date:</label>
+            <input type="date" name="completion_date" required>
+
+            <label>Project Description:</label>
+            <textarea name="description" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
         </form>
     </div>
-
-    <h2>Completed Projects</h2>
-    <table>
-        <tr>
-            <th>Project Name</th>
-            <th>Completed On</th>
-        </tr>
-        <?php if (!empty($completedProjects)): ?>
-            <?php foreach ($completedProjects as $project): ?>
-                <tr>
-                    <td><?php echo $project['name']; ?></td>
-                    <td><?php echo $project['date']; ?></td>
-                </tr>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </table>
 </body>
 </html>
