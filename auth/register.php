@@ -143,6 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <option value="freelancer" <?php echo (isset($_POST['role']) && $_POST['role'] === 'freelancer') ? 'selected' : ''; ?>>Freelancer</option>
                         <option value="delivery_partner" <?php echo (isset($_POST['role']) && $_POST['role'] === 'delivery_partner') ? 'selected' : ''; ?>>Delivery Partner</option>
                         <option value="service_provider" <?php echo (isset($_POST['role']) && $_POST['role'] === 'service_provider') ? 'selected' : ''; ?>>Service Provider</option>
+                        <option value="instructer" <?php echo (isset($_POST['role']) && $_POST['role'] === 'instructer') ? 'selected' : ''; ?>>Instructer</option>
                     </select>
                 </div>
 

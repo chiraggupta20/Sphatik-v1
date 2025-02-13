@@ -10,7 +10,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <?php include '../includes/header.php'; ?>
+    <?php include '../includes/header.php'; 
+    include '../config/database.php';
+    ?>
+
 
     <main class="courses-page">
         <div class="container">
@@ -26,13 +29,13 @@
                     <img src="../includes/images/dbms.jpg" alt="Course 2">
                     <h3>Database management system</h3>
                     <p>Short description of the course.</p>
-                    <a href="mit.php" class="btn">Enroll Now</a>
+                    <a href="#" class="btn">Enroll Now</a>
                 </div>
                 <div class="course-card">
                     <img src="../includes/images/mit.png" alt="Course 3">
                     <h3>Micoprocessor and Interfacing Techniques</h3>
                     <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
+                    <a href="mit.php" class="btn">Enroll Now</a>
                 </div>
                 <div class="course-card">
                     <img src="../includes/images/os.jpg" alt="Course 4">

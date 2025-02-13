@@ -1,10 +1,10 @@
 <?php
-define("BASE_URL", "http://localhost/Sphatik-v1/");
+define("BASE_URL", "http://localhost/Sphatik v1/");
 ?>
 
 <header class="header">
     <div class="container">
-        <a href="sphatik-v1/index.php" class="logo">Sphatik</a>
+        <a href="sphatik v1/index.php" class="logo">Sphatik</a>
         <nav class="nav">
             <button class="mobile-menu-btn">
                 <span></span>
@@ -12,7 +12,7 @@ define("BASE_URL", "http://localhost/Sphatik-v1/");
                 <span></span>
             </button>
             <ul class="nav-list">
-                <li class="lsit-item"><a href="<?= BASE_URL ?>index.php">Home</a></li>
+                <li class="lsit-item"><a href="<?= BASE_URL ?>index.php" style="text-decoration: none;">Home</a></li>
                 <li class="lsit-item"><a href="<?= BASE_URL ?>courses/courses.php">Courses</a></li>
                 <li class="lsit-item"><a href="<?= BASE_URL ?>freelance.php">Freelance</a></li>
                 <li class="lsit-item"><a href="<?= BASE_URL ?>services.php">Local Services</a></li>
