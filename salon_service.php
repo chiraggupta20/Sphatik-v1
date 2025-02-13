@@ -10,19 +10,11 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salon Services</title>
     <link rel="stylesheet" href="./css/salon.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Salon Services</h1>
-        <nav>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="salon.php">Salon</a></li>
-                <li><a href="painting.php">Home Painting</a></li>
-                <li><a href="cleaning.php">Home Cleaning</a></li>
-            </ul>
-        </nav>
-    </header>
+<?php include 'includes/header.php'; ?>
+   
 
     <section class="services">
         <h2>Our Services</h2>

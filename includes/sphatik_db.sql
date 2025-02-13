@@ -57,13 +57,17 @@ INSERT INTO `courses` (`id`, `img_src`, `title`, `description`, `enroll_link`, `
 -- Table structure for table `delivery_partners`
 --
 
+
+
 CREATE TABLE `delivery_partners` (
-  `id` int(11) NOT NULL,
-  `full_name` varchar(100) NOT NULL,
-  `phone_number` varchar(15) NOT NULL,
-  `vehicle_type` enum('bike','truck','car') NOT NULL,
-  `registered_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `full_name` VARCHAR(100) NOT NULL,
+  `phone_number` VARCHAR(15) NOT NULL,
+  `vehicle_type` ENUM('bike', 'truck', 'car') NOT NULL,
+  `registered_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 --
 -- Dumping data for table `delivery_partners`
