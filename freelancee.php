@@ -70,7 +70,7 @@ $tabs = [
             max-width: 300px;
             margin: 20px auto;
             padding: 12px;
-            background-color: #4a0072;
+            background-color: #6a0dad;
             color: white;
             font-size: 16px;
             font-weight: bold;
@@ -80,12 +80,12 @@ $tabs = [
             cursor: pointer;
         }
         .add-project-btn:hover {
-            background-color: #3a0062;
+            background-color: #6d28d9;
         }
         .sidebar {
             width: 100%;
             max-width: 280px;
-            background: linear-gradient(135deg, #4a0072, #300050);
+            background: linear-gradient(135deg, #6d28d9);
             padding: 20px;
             text-align: center;
             color: white;
@@ -130,7 +130,7 @@ $tabs = [
             text-align: left;
         }
         th {
-            background: #4a0072;
+            background: #6d28d6;
             color: white;
         }
     </style>

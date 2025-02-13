@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 13, 2025 at 04:50 AM
+-- Generation Time: Feb 13, 2025 at 06:42 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `sphatik_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `completed_projects`
+--
+
+CREATE TABLE `completed_projects` (
+  `id` int(11) NOT NULL,
+  `project_name` varchar(255) NOT NULL,
+  `client_name` varchar(255) NOT NULL,
+  `completion_date` date NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `completed_projects`
+--
+
+INSERT INTO `completed_projects` (`id`, `project_name`, `client_name`, `completion_date`, `description`) VALUES
+(1, 'Database Management system', '', '2014-01-03', 'hi'),
+(2, 'Microprocessor ', '', '2024-06-03', 'DOne');
 
 -- --------------------------------------------------------
 
@@ -57,17 +79,13 @@ INSERT INTO `courses` (`id`, `img_src`, `title`, `description`, `enroll_link`, `
 -- Table structure for table `delivery_partners`
 --
 
-
-
 CREATE TABLE `delivery_partners` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `full_name` VARCHAR(100) NOT NULL,
-  `phone_number` VARCHAR(15) NOT NULL,
-  `vehicle_type` ENUM('bike', 'truck', 'car') NOT NULL,
-  `registered_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
+  `id` int(11) NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `phone_number` varchar(15) NOT NULL,
+  `vehicle_type` enum('bike','truck','car') NOT NULL,
+  `registered_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
 
 --
 -- Dumping data for table `delivery_partners`
@@ -150,6 +168,12 @@ INSERT INTO `user_profiles` (`profile_id`, `user_id`, `full_name`, `phone`) VALU
 --
 
 --
+-- Indexes for table `completed_projects`
+--
+ALTER TABLE `completed_projects`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `courses`
 --
 ALTER TABLE `courses`
@@ -188,6 +212,12 @@ ALTER TABLE `user_profiles`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `completed_projects`
+--
+ALTER TABLE `completed_projects`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `courses`
