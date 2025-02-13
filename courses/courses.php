@@ -12,6 +12,7 @@
 <body>
     <?php include '../includes/header.php'; 
     include '../config/database.php';
+    include '../includes/functions.php';
     ?>
 
 
@@ -19,60 +20,20 @@
         <div class="container">
             <h1>Our Courses</h1>
             <div class="courses-grid">
-                <div class="course-card">
-                    <img src="../includes/images/dcn.jpg" alt="Course 1">
-                    <h3>Data communication and Networking</h3>
-                    <p>Short description of the course.</p>
-                    <a href="dcn.php" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/dbms.jpg" alt="Course 2">
-                    <h3>Database management system</h3>
-                    <p>Short description of the course.</p>
-                    <a href="#" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/mit.png" alt="Course 3">
-                    <h3>Micoprocessor and Interfacing Techniques</h3>
-                    <p>Short description of the course.</p>
-                    <a href="mit.php" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/os.jpg" alt="Course 4">
-                    <h3>Operating System</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/python.jpg" alt="Course 2">
-                    <h3>Python Programming</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/ds.jpg" alt="Course 2">
-                    <h3>Data Strctures</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/se.jpg" alt="Course 2">
-                    <h3>Software Engineering</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/wt.jpg" alt="Course 2">
-                    <h3>Web Technologies</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/ict.jpg" alt="Course 2">
-                    <h3>Information and Communication Technologies</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
+                <?php
+                $sql = "SELECT img_src, title, description, enroll_link, college_name FROM courses";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute();
+                $courses = $stmt->fetchAll();
+
+                if ($courses) {
+                    foreach ($courses as $course) {
+                        echo generateCourseCard($course['img_src'], $course['title'], $course['description'], $course['enroll_link'], $course['college_name']);
+                    }
+                } else {
+                    echo "<p>No courses available.</p>";
+                }
+        ?>
                 <!-- Add more course cards as needed -->
             </div>
         </div>
