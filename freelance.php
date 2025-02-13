@@ -1,4 +1,3 @@
-PHP for Freelancer dashboard:
 <?php
 $tabs = [
     "ongoing" => [
@@ -38,6 +37,26 @@ $activeTab = isset($_GET['tab']) ? $_GET['tab'] : 'ongoing';
     <title>Freelancer Dashboard</title>
     <link rel="stylesheet" href="./css/freelance_styles.css">
     <link rel="stylesheet" href="./css/style.css">
+    <style>
+        .add-project-btn {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin: 20px auto;
+            padding: 12px;
+            background-color: #6a0dad;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .add-project-btn:hover {
+            background-color: #5a0ca0;
+        }
+    </style>
 </head>
 <body>
     <?php include './includes/header.php'; ?>
@@ -68,7 +87,16 @@ $activeTab = isset($_GET['tab']) ? $_GET['tab'] : 'ongoing';
                 }
                 echo "</tr>";
             }
-            echo "</table></div>";
+            echo "</table>";
+            
+            // Add Project Button for Completed Projects
+            if ($activeTab === 'completed') {
+                //echo "<button href=faq.php class='add-project-btn'>Add a Completed Project</button>";
+                echo "<a href='addprojectbutton.php' class='add-project-btn'>Add a Completed Project</a>";
+
+            }
+
+            echo "</div>";
         } else {
             echo "<div class='card tab-content active'><h2>Invalid Tab</h2><p>The selected tab does not exist.</p></div>";
         }

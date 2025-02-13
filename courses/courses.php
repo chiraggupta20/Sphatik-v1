@@ -1,4 +1,25 @@
-<!-- filepath: /c:/xampp/htdocs/Sphatik v1/courses.php -->
+<?php
+include '../config/database.php';
+
+// Fetch courses from database
+$sql = "SELECT img_src, title, description, enroll_link, college_name FROM courses";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$courses = $stmt->fetchAll();
+
+// Function to generate course card markup
+function generateCourseCard($img, $title, $desc, $link, $college) {
+    return "<div class='course-card'>
+                <img src='$img' alt='$title'>
+                <h3>$title</h3>
+                <p>$desc</p>
+                <p class='college-name'><strong>Offered by:</strong> $college</p>
+                <a href='$link' class='btn'>Enroll Now</a>
+            </div>";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,70 +31,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <?php include '../includes/header.php'; 
-    include '../config/database.php';
-    ?>
-
+    <?php include '../includes/header.php'; ?>
 
     <main class="courses-page">
         <div class="container">
             <h1>Our Courses</h1>
             <div class="courses-grid">
-                <div class="course-card">
-                    <img src="../includes/images/dcn.jpg" alt="Course 1">
-                    <h3>Data communication and Networking</h3>
-                    <p>Short description of the course.</p>
-                    <a href="dcn.php" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/dbms.jpg" alt="Course 2">
-                    <h3>Database management system</h3>
-                    <p>Short description of the course.</p>
-                    <a href="#" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/mit.png" alt="Course 3">
-                    <h3>Micoprocessor and Interfacing Techniques</h3>
-                    <p>Short description of the course.</p>
-                    <a href="mit.php" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/os.jpg" alt="Course 4">
-                    <h3>Operating System</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/python.jpg" alt="Course 2">
-                    <h3>Python Programming</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/ds.jpg" alt="Course 2">
-                    <h3>Data Strctures</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/se.jpg" alt="Course 2">
-                    <h3>Software Engineering</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/wt.jpg" alt="Course 2">
-                    <h3>Web Technologies</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <div class="course-card">
-                    <img src="../includes/images/ict.jpg" alt="Course 2">
-                    <h3>Information and Communication Technologies</h3>
-                    <p>Short description of the course.</p>
-                    <a href="course-details.php?id=2" class="btn">Enroll Now</a>
-                </div>
-                <!-- Add more course cards as needed -->
+            <?php
+            if ($courses) {
+                foreach ($courses as $course) {
+                    echo generateCourseCard($course['img_src'], $course['title'], $course['description'], $course['enroll_link'], $course['college_name']);
+                }
+            } else {
+                echo "<p>No courses available.</p>";
+            }
+            ?>
             </div>
         </div>
     </main>

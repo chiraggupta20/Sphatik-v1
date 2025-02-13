@@ -27,7 +27,7 @@
             <div class="container">
                 <h2>Our Services</h2>
                 <div class="features-grid">
-                    <a href="courses.php" class="feature-card">
+                    <a href="../sphatik-v1/courses/courses.php" class="feature-card">
                         <i class="fas fa-book"></i>
                         <h3>Courses</h3>
                         <p>Access quality education and skill development courses</p>

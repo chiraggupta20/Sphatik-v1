@@ -100,3 +100,13 @@ function getFlashMessage()
     }
     return null;
 }
+
+function generateCourseCard($img, $title, $desc, $link, $college) {
+    return "<div class='course-card'>
+                <img src='$img' alt='$title'>
+                <h3>$title</h3>
+                <p>$desc</p>
+                <p class='college-name'><strong>Offered by:</strong> $college</p>
+                <a href='$link' class='btn'>Enroll Now</a>
+            </div>";
+}

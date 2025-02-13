@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delivery Partner</title>
-    <link rel="stylesheet" href="css/delivery_style.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/delivery_style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-<?php include 'includes/header.php'; ?>
+<?php include './includes/header.php'; ?>
 <section class="services">
     <div class="container">
         <h2>Join as a Delivery Partner</h2>
@@ -27,15 +27,15 @@
         </div>
 
         <h2>Register Now</h2>
-        <form action="submit_delivery.php" method="POST" class="service-form">
+        <form action="/submit_delivery.php" method="POST" class="service-form">
             <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="full_name" required>
 
             <label for="phone">Phone Number:</label>
-            <input type="text" id="phone" name="phone" required>
+            <input type="text" id="phone" name="phone_number" required>
 
             <label for="vehicle">Vehicle Type:</label>
-            <select id="vehicle" name="vehicle">
+            <select id="vehicle" name="vehicle_type">
                 <option value="bike">Bike</option>
                 <option value="car">Car</option>
                 <option value="truck">Truck</option>
