@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 header("Location: ../dashboard/instructor.php");
                 break;
             default:
-                header("Location: ../dashboard/user.php");
+                header("Location: ../user_profile.php");
                 break;
         }
         exit();

@@ -2,12 +2,12 @@ About Us php
 
 <?php
 $team_members = [
-    ["name" => "Shaan Mansuri", "role" => "Leader & Page Designer", "image" => "shaan.jpg"],
+    ["name" => "Shaan Mansuri", "role" => "Team Leading", "image" => "shaan.jpg"],
     ["name" => "Mann Makhecha", "role" => "Coder", "image" => "mann.jpg"],
-    ["name" => "Krish Jain", "role" => "Member", "image" => "krish.jpg"],
-    ["name" => "Het Malvaniya", "role" => "Member", "image" => "het.jpg"],
-    ["name" => "Chirag Gupta", "role" => "Member", "image" => "chirag.jpg"],
-    ["name" => "Dhiraj Jagwani", "role" => "Member", "image" => "dhiraj.jpg"],
+    ["name" => "Krish Jain", "role" => "Content Analyst", "image" => "krish.jpg"],
+    ["name" => "Dhiraj Jagwani", "role" => "Executor", "image" => "dhiraj.jpg"],
+    ["name" => "Chirag Gupta", "role" => "Specified Task", "image" => "chirag.jpg"],
+    ["name" => "Het Malvaniya", "role" => "Specified Task", "image" => "het.jpg"],
 ];
 
 $testimonials = [

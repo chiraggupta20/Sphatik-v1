@@ -83,56 +83,86 @@ $tabs = [
             background-color: #6d28d9;
         }
         .sidebar {
-            width: 100%;
-            max-width: 280px;
-            background: linear-gradient(135deg, #6d28d9);
-            padding: 20px;
-            text-align: center;
-            color: white;
-            border-radius: 10px;
-            margin: 0 auto;
-        }
+    width: 260px;
+    background: linear-gradient(135deg, #6d28d9, #4b0082);
+    color: white;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+}
+        
         .sidebar h1 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
+            font-size: 22px;
+    margin-bottom: 25px;
+    text-align: center;
         }
+
         .tabs {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
+             width: 100%;
         }
         .tab {
-            display: block;
-            padding: 10px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    border-radius: 6px;
+    transition: 0.3s;
         }
-        .tab.active {
-            background: rgba(255, 255, 255, 0.4);
-        }
+
+
+        ..tab:hover, .tab.active {
+    background: rgba(255, 255, 255, 0.2);
+}
         .content {
-            padding: 20px;
+    flex-grow: 1;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
         }
+
+        .card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+}
+h2 {
+    color: #6d28d9;
+    text-align: center;
+    margin-bottom: 15px;
+}
         table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid #ddd;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+ }
+     th, td {
+     padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
         }
         th, td {
             padding: 10px;
             text-align: left;
         }
         th {
-            background: #6d28d6;
-            color: white;
-        }
+     background: #6d28d9;
+    color: white;}
     </style>
 </head>
 <body>

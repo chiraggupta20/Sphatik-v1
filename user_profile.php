@@ -1,29 +1,21 @@
 <?php
 // Dummy user data (Replace with actual database data)
 $user = [
-    "name" => "John Doe",
-    "email" => "johndoe@example.com",
-    "phone" => "+1 234 567 890",
-    "address" => "1234 Elm Street, Springfield, USA",
-    "joined" => "January 2021"
-];
-
-// Dummy order history
-$orders = [
-    ["order_id" => "ORD12345", "date" => "2025-02-10", "status" => "Delivered", "amount" => "$120.00"],
-    ["order_id" => "ORD67890", "date" => "2025-01-25", "status" => "Shipped", "amount" => "$45.50"],
-    ["order_id" => "ORD54321", "date" => "2025-01-15", "status" => "Pending", "amount" => "$78.99"]
+    "name" => "Dhiraj Jagwani",
+    "email" => "jagwanidhiraj22@gmail.com",
+    "phone" => "8866596787",
+    "address" => "Gujarat,Ahmedabad",
+    "joined" => "January 2025"
 ];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Profile</title>
-    <link rel="stylesheet" href="css/profile_style.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/profile_style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 <?php include 'includes/header.php'; ?>
@@ -42,31 +34,11 @@ $orders = [
             <p><strong>Address:</strong> <?php echo $user['address']; ?></p>
         </div>
 
-        <div class="order-history">
-            <h3>Order History</h3>
-            <table>
-                <tr>
-                    <th>Order ID</th>
-                    <th>Date</th>
-                    <th>Status</th>
-                    <th>Amount</th>
-                </tr>
-                <?php foreach ($orders as $order) : ?>
-                <tr>
-                    <td><?php echo $order['order_id']; ?></td>
-                    <td><?php echo $order['date']; ?></td>
-                    <td><?php echo $order['status']; ?></td>
-                    <td><?php echo $order['amount']; ?></td>
-                </tr>
-                <?php endforeach; ?>
-            </table>
-        </div>
-
         <div class="account-settings">
             <h3>Account Settings</h3>
             <ul>
-                <li><a href="#">Edit Profile</a></li>
-                <li><a href="#">Change Password</a></li>
+                <li><a href="auth/editprofile.php">Edit Profile</a></li>
+                <li><a href="../auth/update_password.php">Change Password</a></li>
                 <li><a href="#">Manage Addresses</a></li>
                 <li><a href="#">Payment Methods</a></li>
                 <li><a href="#">Logout</a></li>

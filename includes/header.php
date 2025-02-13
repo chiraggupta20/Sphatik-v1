@@ -1,5 +1,5 @@
 <?php
-define("BASE_URL", "http://localhost/Sphatik v1/");
+define("BASE_URL", "http://localhost/Sphatik-v1/");
 ?>
 
 <header class="header">
